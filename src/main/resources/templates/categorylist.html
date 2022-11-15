@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<title>Categories</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container" style="width: 400px">
+	<h1>Categories</h1>
+	<table class="table table-striped">
+	<tr>
+		<th>Name</th>
+	</tr>
+	
+	<tr th:each="category : ${categories}">
+		<td th:text="${category.name}"></td>
+	</tr>
+	
+	
+	</table>
+	<p>
+	<a sec:authorize="hasAuthority('OWNER')" href="/addcat"><input type="button" value="Add Category" class="btn btn-success"></input></a>
+	<a href="/collection"><input type="button" value="Back to Bookshelf" class="btn btn-success"></input></a></p>
+</div>
+</body>
+</html>
