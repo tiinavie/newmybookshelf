@@ -70,14 +70,6 @@ public class Collection {
 		this.author = author;
 	}
 
-	public Readstatus getReadstatus() {
-		return readstatus;
-	}
-
-	public void setReadstatus(Readstatus readstatus) {
-		this.readstatus = readstatus;
-	}
-
 	public int getYear() {
 		return year;
 	}
@@ -94,6 +86,14 @@ public class Collection {
 		this.category = category;
 	}
 
+	public Readstatus getReadstatus() {
+		return readstatus;
+	}
+
+	public void setReadstatus(Readstatus readstatus) {
+		this.readstatus = readstatus;
+	}
+
 	// toString
 	@Override
 	public String toString() {
@@ -101,8 +101,8 @@ public class Collection {
 			return "Book [title=" + title + ", author=" + author + ", year=" + year + ", category=" + category
 					+ ", readstatus=" + readstatus + "]";
 		else
-			return "Book [title=" + title + ", author=" + author + ", year=" + year
-					+ ", readstatus=\" + readstatus + ]";
+			return "Book [title=" + title + ", author=" + author + ", year=" + year + ", readstatus=" + readstatus
+					+ "]";
 	}
 
 }

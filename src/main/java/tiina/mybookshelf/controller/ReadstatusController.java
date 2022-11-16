@@ -10,13 +10,12 @@ import tiina.mybookshelf.domain.ReadstatusRepository;
 @Controller
 public class ReadstatusController {
 	@Autowired
-	private ReadstatusRepository readstatusRepository;
+	private ReadstatusRepository rsRepository;
 
 	// Show all read statuses
 	@RequestMapping(value = "/readstatus")
 	public String readstatus(Model model) {
-		model.addAttribute("readstatuses", readstatusRepository.findAll());
+		model.addAttribute("readstatuses", rsRepository.findAll());
 		return "readstatuslist";
 	}
-
 }

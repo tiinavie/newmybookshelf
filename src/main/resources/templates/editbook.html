@@ -30,7 +30,7 @@
 						<select id="statlist" th:field="*{readstatus}">
 						<option th:each="readstatus: ${readstatuses}" th:value="${readstatus.statusid}" th:text="${readstatus.name}"></option>
 						</select></p>
-					
+											
 					<input class="btn btn-success" type="submit" value="Save"></input>
 					<a href="/collection"><input type="button" value="Back to Bookshelf" class="btn btn-success"></input></a>
 					

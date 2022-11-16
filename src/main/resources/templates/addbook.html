@@ -3,9 +3,10 @@
 <head>
 	<title>Add Books</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
-	<div class="container">
+	<div class="container" style="width: 400px">
 		<h1>Add book</h1>
 			<div>
 				<form th:object="${book}" th:action="@{save}" action="#" method="post">
@@ -19,12 +20,12 @@
 						<select id="catlist" th:field="*{category}">
 						<option th:each="category: ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
 						</select></p>
-					<p><label for="readstatus">Read</label>
+					<p><label for="readstatus">Status</label>
 						<select id="readstatus" th:field="*{readstatus}">
 						<option th:each="readstatus: ${readstatuses}" th:value="${readstatus.statusid}" th:text="${readstatus.name}"></option>
 						</select></p>
-					<input type="submit" value="Save"></input>
-					<a href="/collection"><input type="button" value="Back to Bookshelf"></input></a>
+					<input type="submit" value="Save" class="btn btn-success"></input>
+					<a href="/collection"><input type="button" class="btn btn-success" value="Back to Bookshelf"></input></a>
 				</form>
 			</div>
 	</div>

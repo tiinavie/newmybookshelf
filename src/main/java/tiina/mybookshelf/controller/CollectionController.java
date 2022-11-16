@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import tiina.mybookshelf.domain.CategoryRepository;
 import tiina.mybookshelf.domain.Collection;
 import tiina.mybookshelf.domain.CollectionRepository;
+import tiina.mybookshelf.domain.ReadstatusRepository;
 import tiina.mybookshelf.domain.UserRepository;
 
 @Controller
@@ -27,6 +28,9 @@ public class CollectionController {
 
 	@Autowired
 	private UserRepository userRepository;
+
+	@Autowired
+	private ReadstatusRepository rsRepository;
 
 	// Login page
 	@RequestMapping(value = "/login")
@@ -58,6 +62,7 @@ public class CollectionController {
 	public String addBook(Model model) {
 		model.addAttribute("book", new Collection());
 		model.addAttribute("categories", categoryRepository.findAll());
+		model.addAttribute("readstatuses", rsRepository.findAll());
 		return "addbook";
 	}
 
@@ -82,6 +87,7 @@ public class CollectionController {
 	public String editBook(@PathVariable("id") Long bookId, Model model) {
 		model.addAttribute("book", cRepository.findById(bookId));
 		model.addAttribute("categories", categoryRepository.findAll());
+		model.addAttribute("readstatuses", rsRepository.findAll());
 		return "editbook";
 	}
 
