@@ -21,7 +21,7 @@ public class Readstatus {
 	@JsonIgnoreProperties("readstatus")
 	private List<Collection> books;
 
-	// konstruktorit
+	// constructors
 	public Readstatus() {
 		this.name = null;
 	}

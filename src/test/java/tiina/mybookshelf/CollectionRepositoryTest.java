@@ -20,6 +20,7 @@ public class CollectionRepositoryTest {
 	@Autowired
 	private CollectionRepository collectionRepository;
 
+	// testing findByAuthor-method
 	@Test
 	public void findByTitleShouldReturnBook() {
 		List<Collection> books = collectionRepository.findByAuthor("Neil Gaiman");
@@ -28,6 +29,7 @@ public class CollectionRepositoryTest {
 		assertThat(books.get(0).getTitle()).isEqualTo("Coraline");
 	}
 
+	// testing save-method
 	@Test
 	public void createNewBook() {
 		Collection book = new Collection("Café Con Lychee", "Emery Lee", 2022, null, null);

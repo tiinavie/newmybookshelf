@@ -3,9 +3,10 @@
 <head>
 	<title>Edit Books</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
-	<div class="container">
+	<div class="container" style="width: 400px">
 		<h1>Edit book</h1>
 			<div>
 				<form th:object="${book}" th:action="@{../save}" action="#" method="post">
@@ -25,13 +26,13 @@
 						<option th:each="category: ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
 						</select></p>
 						
-					<p><label for="readstatus">Read Status</label>
-						<select id="readstatus" th:field="*{readstatus}">
+					<p><label for="statlist">Status</label>
+						<select id="statlist" th:field="*{readstatus}">
 						<option th:each="readstatus: ${readstatuses}" th:value="${readstatus.statusid}" th:text="${readstatus.name}"></option>
 						</select></p>
 					
-					<input class="button" type="submit" value="Save"></input>
-					<a href="/collection"><input type="button" value="Back to Bookshelf"></input></a>
+					<input class="btn btn-success" type="submit" value="Save"></input>
+					<a href="/collection"><input type="button" value="Back to Bookshelf" class="btn btn-success"></input></a>
 					
 				</form>
 			</div>
