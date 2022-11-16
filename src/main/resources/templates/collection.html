@@ -12,12 +12,14 @@
 		<h3 sec:authorize="hasAuthority('OWNER')">Welcome Tiina!</h3>
 	</div>
 	<div style="padding:10px 0">
-	<th:block sec:authorize="!isAuthenticated()">
-		<a href="/login"><input type="button" value="Log in to edit" class="btn btn-success"></a>
-    </th:block>
-	<th:block sec:authorize="isAuthenticated()">
-		<a href="/logout"><input type="button" value="Sign Out" class="btn btn-danger"></a>
-	</th:block>
+	
+	<form th:action="@{/login}" method="post" th:block sec:authorize="!isAuthenticated()">
+		<input type="submit" value="Log in to edit" class="btn btn-success"/>
+	</form>
+
+	<form th:action="@{/logout}" method="post" th:block sec:authorize="isAuthenticated()">
+		<input type="submit" value="Sign Out" class="btn btn-danger"/>
+	</form>
 	</div>
 	<table class="table table-striped">
 	<tr>
